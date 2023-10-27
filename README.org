@@ -1,0 +1,7 @@
+* itsvermont
+
+This is a description of my itsvermont.
+
+** Usage
+
+To use my project, run this command: ./myproject --verbose
