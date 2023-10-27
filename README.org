@@ -1,2 +1,2 @@
 My personal preferences for a Golang project template that works with
-(cookiecutter)[https://github.com/cookiecutter/cookiecutter#cookiecutter].
+[cookiecutter](https://github.com/cookiecutter/cookiecutter#cookiecutter).
