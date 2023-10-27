@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/taylormonacelli/goldbug"
-	"github.com/taylormonacelli/itsvermont"
+	"github.com/taylormonacelli/{{ cookiecutter.project_slug }}"
 )
 
 var (
@@ -30,6 +30,6 @@ func main() {
 		}
 	}
 
-	code := itsvermont.Main()
+	code := {{ cookiecutter.project_slug }}.Main()
 	os.Exit(code)
 }

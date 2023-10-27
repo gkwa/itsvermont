@@ -1,6 +1,6 @@
-* itsvermont
+* {{ cookiecutter.project_slug }}
 
-This is a description of my itsvermont.
+This is a description of my {{ cookiecutter.project_slug }}.
 
 ** Usage
 

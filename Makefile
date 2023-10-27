@@ -1,4 +1,4 @@
-BIN := itsvermont
+BIN := {{ cookiecutter.project_slug }}
 
 GOPATH := $(shell go env GOPATH)
 ifeq ($(OS),Windows_NT)

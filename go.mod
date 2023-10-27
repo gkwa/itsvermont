@@ -1,4 +1,4 @@
-module github.com/taylormonacelli/itsvermont
+module github.com/taylormonacelli/{{ cookiecutter.project_slug }}
 
 go 1.21.1
 
