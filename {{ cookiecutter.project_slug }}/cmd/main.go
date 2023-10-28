@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/taylormonacelli/goldbug"
-	"github.com/taylormonacelli/{{ cookiecutter.project_slug }}"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 )
 
 var (
