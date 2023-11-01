@@ -1,6 +1,5 @@
 BIN := {{ cookiecutter.project_slug }}
 
-GOPATH := $(shell go env GOPATH)
 ifeq ($(OS),Windows_NT)
     GO_FILES := $(shell dir /S /B *.go)
     GO_DEPS := $(shell dir /S /B go.mod go.sum)
@@ -24,6 +23,7 @@ test: $(BIN)
 pretty: $(GO_FILES)
 	gofumpt -w $^
 
+GOPATH := $(shell go env GOPATH)
 .PHONY: install
 install: $(GOPATH)/bin/$(BIN)
 
