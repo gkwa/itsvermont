@@ -14,7 +14,7 @@ var (
 	logFormat string
 )
 
-func main() {
+func run() {
 	flag.BoolVar(&verbose, "verbose", false, "Enable verbose output")
 	flag.BoolVar(&verbose, "v", false, "Enable verbose output (shorthand)")
 
