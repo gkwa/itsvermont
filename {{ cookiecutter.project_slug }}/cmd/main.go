@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/taylormonacelli/goldbug"
+	"github.com/taylormonacelli/littlecow"
 	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 )
 
@@ -22,13 +22,22 @@ func main() {
 
 	flag.Parse()
 
-	if verbose || logFormat != "" {
-		if logFormat == "json" {
-			goldbug.SetDefaultLoggerJson(slog.LevelDebug)
-		} else {
-			goldbug.SetDefaultLoggerText(slog.LevelDebug)
-		}
+	var logLevel slog.Level
+	logLevel = slog.LevelInfo
+	if verbose {
+		logLevel = slog.LevelDebug
 	}
+
+	opts := littlecow.OpinionatedHandlerOptions(logLevel, littlecow.RemoveTimestampAndTruncateSource)
+
+	var handler slog.Handler
+	handler = slog.NewTextHandler(os.Stderr, opts)
+	if logFormat == "json" {
+		handler = slog.NewJSONHandler(os.Stderr, opts)
+	}
+
+	logger := slog.New(handler)
+	slog.SetDefault(logger)
 
 	code := {{ cookiecutter.project_slug }}.Main()
 	os.Exit(code)
